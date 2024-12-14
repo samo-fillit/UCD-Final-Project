@@ -2,13 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->
-    <!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> -->
     <meta name="viewport" content="width=1592, maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
     <meta name="og:type" content="website" />
     <meta name="twitter:card" content="photo" />
-    <link rel="stylesheet" type="text/css" href="css/overview.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
     <link rel="stylesheet" type="text/css" href="css/globals.css" />
   </head>
@@ -246,7 +244,6 @@
         <img class="pink-logo-1-1" src="img/pink-logo-1-3.svg" alt="Pink Logo 1" />
         <div class="frame">
           <div class="frame">
-            <div class="overview-1 valign-text-middle header--13--bold">OVERVIEW</div>
             <a href="security.html"
               ><div class="security valign-text-middle security-1 header--13--bold">SECURITY</div>
             </a>
@@ -354,7 +351,6 @@
       };
 
       ShowOnScroll.prototype.resetScrolling = function () {
-        // Clear state
         var screenBottom = window.pageYOffset + window.innerHeight;
         for (var i = 0; i < this.toShow.length; i++) {
           var e = this.toShow[i];
@@ -363,7 +359,6 @@
         this.toShow = [];
         this.nextEventY == undefined;
 
-        // Collect items
         var itemsToShowOnScroll = Array.prototype.slice.call(document.getElementsByTagName("*"));
         itemsToShowOnScroll = itemsToShowOnScroll.filter(function (e) {
           return e.getAttribute("show-on-scroll") != undefined;
@@ -401,7 +396,6 @@
         window.addEventListener("resize", this);
       };
 
-      // After anima-src
       setTimeout(function () {
         var instShowOnScroll = new ShowOnScroll();
         instShowOnScroll.init();
@@ -414,34 +408,28 @@
     <script>
       emailjs.init("service_dwend58");
 
-      // Get references to the form, overlay, and buttons
-      const contactBtn = document.getElementById("contact-us-btn"); // Contact Us button
-      const demoBtn = document.querySelector(".button-secondary .button-1"); // Request Demo button
+      const contactBtn = document.getElementById("contact-us-btn");
+      const demoBtn = document.querySelector(".button-secondary .button-1");
       const overlay = document.getElementById("contact-overlay");
       const closeBtn = document.getElementById("close-overlay");
       const contactForm = document.getElementById("contact-form");
 
-      // Function to open the contact form overlay
       function openContactForm() {
         overlay.style.display = "flex";
       }
 
-      // Function to close the contact form overlay
       closeBtn.addEventListener("click", function () {
         overlay.style.display = "none";
       });
 
-      // Event listener for the "Contact Us" button
       contactBtn.addEventListener("click", function () {
         openContactForm();
       });
 
-      // Event listener for the "Request Demo" button
       demoBtn.addEventListener("click", function () {
         openContactForm();
       });
 
-      // Handle form submission
       contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -456,8 +444,8 @@
         })
         .then(function(response) {
           alert("Message sent successfully!");
-          overlay.style.display = "none"; // Close the overlay after form submission
-          contactForm.reset(); // Reset form fields
+          overlay.style.display = "none";
+          contactForm.reset();
         }, function(error) {
           alert("Error sending message. Please try again.");
           console.log(error);
