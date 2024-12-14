@@ -1,0 +1,108 @@
+:root { 
+  --black: #000000;
+  --dark-grey: #3d3d3d;
+  --light-grey: #f7f7f7;
+  --primary: #ff637d;
+  --white: #ffffff;
+ 
+  --font-size-13px: 13px;
+  --font-size-28px: 28px;
+  --font-size-l: 18px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+  --font-size-xl: 22px;
+  --font-size-xs: 12px;
+  --font-size-xxl: 40px;
+  --font-size-xxxl: 48px;
+ 
+  --font-family-dm_sans: "DM Sans", Helvetica;
+  --font-family-gt_walsheim-bold: "GT Walsheim-Bold", Helvetica;
+  --font-family-inter: "Inter", Helvetica;
+}
+.header--16--light--underline {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.header--13--bold {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-13px);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.header--12--bold {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.title--40--bold {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.title--28--bold {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-28px);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.title--22--bold {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.44px;
+}
+
+.title--18--regular {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.body--14--light {
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.dmsans-normal-masala-18px {
+  color: var(--dark-grey);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.dmsans-normal-black-haze-14px {
+  color: var(--light-grey);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.dmsans-normal-masala-14px {
+  color: var(--dark-grey);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
