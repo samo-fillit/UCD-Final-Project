@@ -198,3 +198,11 @@
   flex-direction: column;
   position: relative;
 }
+
+.footer-3 {
+  background-color: var(--white);
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}

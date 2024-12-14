@@ -89,6 +89,7 @@
   padding: 16px 0px;
   position: relative;
   width: 160px;
+  cursor: pointer;
 }
 
 .overview .button-secondary {
@@ -103,6 +104,7 @@
   padding: 16px 0px;
   position: relative;
   width: 160px;
+  cursor: pointer;
 }
 
 .overview .button-1 {
@@ -112,6 +114,7 @@
   margin-top: -1.00px;
   position: relative;
   width: fit-content;
+  cursor: pointer;
 }
 
 .overview .fillit_-software_-visual_-final_3-1 {
@@ -129,7 +132,7 @@
   flex-direction: column;
   gap: 24px;
   justify-content: center;
-  padding: 60px 0px 0px;
+  padding: 60px 120px 120px;
   position: relative;
   width: 100%;
 }
