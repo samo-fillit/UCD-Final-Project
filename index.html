@@ -277,27 +277,8 @@
         </form>
       </div>
     </div>
-    <div id="demo-contact-overlay" class="contact-overlay">
-      <div class="contact-overlay-content">
-        <button id="close-demo-overlay" class="close-overlay">&times;</button>
-        <h2>Request Demo</h2>
-        <form id="demo-contact-form">
-          <div class="form-group">
-            <label for="demo-name">Name</label>
-            <input type="text" id="demo-name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="demo-email">Email</label>
-            <input type="email" id="demo-email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="demo-message">Message</label>
-            <textarea id="demo-message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="button-primary">SEND</button>
-        </form>
-      </div>
-    </div>
+
+    <button id="contact-us-btn">Contact Us</button>
 
     
 
@@ -403,33 +384,31 @@
     </script>
 
 
-
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-      emailjs.init("service_dwend58","template_6s9l7ng");
+      emailjs.init("qSgkkLKv32NobDw8I");
 
       const contactBtn = document.getElementById("contact-us-btn");
-      const demoBtn = document.querySelector(".button-secondary .button-1");
       const overlay = document.getElementById("contact-overlay");
       const closeBtn = document.getElementById("close-overlay");
       const contactForm = document.getElementById("contact-form");
 
+      // Open the Contact Us form overlay
       function openContactForm() {
         overlay.style.display = "flex";
       }
 
+      // Close the overlay when close button is clicked
       closeBtn.addEventListener("click", function () {
         overlay.style.display = "none";
       });
 
+      // Show the form when Contact Us button is clicked
       contactBtn.addEventListener("click", function () {
         openContactForm();
       });
 
-      demoBtn.addEventListener("click", function () {
-        openContactForm();
-      });
-
+      // Handle form submission
       contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -437,7 +416,7 @@
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
 
-        emailjs.send("service_dwend58","template_6s9l7ng", {
+        emailjs.send("service_dwend58", "template_6s9l7ng", {
           from_name: name,
           from_email: email,
           message: message,
