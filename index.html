@@ -259,7 +259,7 @@
     <div id="contact-overlay" class="contact-overlay">
       <div class="contact-overlay-content">
         <button id="close-overlay" class="close-overlay">&times;</button>
-        <h2>Contact Us</h2>
+        <h2 id="form-title">Contact Us</h2>
         <form id="contact-form">
           <div class="form-group">
             <label for="name">Name</label>
@@ -277,9 +277,7 @@
         </form>
       </div>
     </div>
-
-    <button id="contact-us-btn">Contact Us</button>
-
+    
     
 
 
@@ -384,53 +382,56 @@
     </script>
 
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      emailjs.init("qSgkkLKv32NobDw8I");
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("qSgkkLKv32NobDw8I");
 
-      const contactBtn = document.getElementById("contact-us-btn");
-      const overlay = document.getElementById("contact-overlay");
-      const closeBtn = document.getElementById("close-overlay");
-      const contactForm = document.getElementById("contact-form");
+  const contactBtn = document.getElementById("contact-us-btn");
+  const demoBtn = document.getElementById("request-demo-button");
+  const overlay = document.getElementById("contact-overlay");
+  const closeBtn = document.getElementById("close-overlay");
+  const contactForm = document.getElementById("contact-form");
+  const formTitle = document.getElementById("form-title");
 
-      // Open the Contact Us form overlay
-      function openContactForm() {
-        overlay.style.display = "flex";
-      }
+  function openForm(title) {
+    formTitle.textContent = title;
+    overlay.style.display = "flex";
+  }
 
-      // Close the overlay when close button is clicked
-      closeBtn.addEventListener("click", function () {
-        overlay.style.display = "none";
-      });
+  closeBtn.addEventListener("click", function () {
+    overlay.style.display = "none";
+  });
 
-      // Show the form when Contact Us button is clicked
-      contactBtn.addEventListener("click", function () {
-        openContactForm();
-      });
+  contactBtn.addEventListener("click", function () {
+    openForm("Contact Us");
+  });
 
-      // Handle form submission
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+  demoBtn.addEventListener("click", function () {
+    openForm("Request Demo");
+  });
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        emailjs.send("service_dwend58", "template_6s9l7ng", {
-          from_name: name,
-          from_email: email,
-          message: message,
-        })
-        .then(function(response) {
-          alert("Message sent successfully!");
-          overlay.style.display = "none";
-          contactForm.reset();
-        }, function(error) {
-          alert("Error sending message. Please try again.");
-          console.log(error);
-        });
-      });
-    </script>
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    emailjs.send("service_dwend58", "template_6s9l7ng", {
+      from_name: name,
+      from_email: email,
+      message: message,
+    })
+    .then(function(response) {
+      alert("Message sent successfully!");
+      overlay.style.display = "none";
+      contactForm.reset();
+    }, function(error) {
+      alert("Error sending message. Please try again.");
+      console.log(error);
+    });
+  });
+</script>
 
 
 
